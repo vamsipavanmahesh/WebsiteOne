@@ -95,6 +95,7 @@ group :development, :test do
   gem 'bullet'
   gem 'bundler-audit', require: false
   gem 'constant-redefinition'
+  gem 'derailed_benchmarks'
   gem 'dotenv-rails'
   gem 'guard'
   gem 'guard-cucumber'
@@ -112,6 +113,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'coveralls', require: false
   gem 'simplecov'
+  gem 'stackprof'
 end
 
 group :development, :staging, :production do
