@@ -121,7 +121,7 @@ group :development, :staging, :production do
 end
 
 group :production do
-  gem 'airbrake'
+  # gem 'airbrake'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
