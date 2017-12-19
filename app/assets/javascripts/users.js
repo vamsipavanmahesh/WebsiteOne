@@ -58,6 +58,15 @@ WebsiteOne.define('Users', function () {
             }, 5);
         });
 
+        $('#goto_karma_activity').click(function() {
+          var scrollHeight = $(document).scrollTop();
+          $('#tabs a[href="#activity"]').tab('show');
+          setTimeout(function () {
+            $(window).scrollTop(scrollHeight);
+          }, 5);
+        });
+
+
         $('#user-filter').on('keyup', function (e) {
             e.preventDefault();
 
