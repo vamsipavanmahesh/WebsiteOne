@@ -22,6 +22,7 @@ plain_options = {
     js_errors: true,
 }
 
+# http://www.jonathanleighton.com/articles/2012/poltergeist-0-6-0/
 debug_options = {
     phantomjs_options: [
         '--ignore-ssl-errors=yes',

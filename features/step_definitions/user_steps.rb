@@ -496,3 +496,7 @@ And(/^the user "([^"]*)" should have karma$/) do |email|
   user = User.find_by email: email
   expect(user.karma).not_to be_nil
 end
+
+When(/^I javascript click "([^"]*)"$/) do |arg|
+  find('#goto_karma_activity', visible: true).trigger(:click)
+end

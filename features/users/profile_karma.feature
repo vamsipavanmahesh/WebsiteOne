@@ -22,3 +22,10 @@ Feature: Showing Karma summary on profile page
     Given I am logged in as "Alice"
     And I am on my "Profile" page
     Then the karma summary is "0"
+
+  @javascript
+  Scenario: Clicking on Karma number should open activity tab
+    Given I am logged in as "Bob"
+    And I am on my "Profile" page
+    When I javascript click "20"
+    Then I should see "Contributions (Hangouts Attended)"

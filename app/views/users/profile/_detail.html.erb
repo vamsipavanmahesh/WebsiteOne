@@ -3,12 +3,8 @@
   <% if presenter.has_skills? %>
       <li><a href="#user-skills" data-toggle="tab">Skills</a></li>
   <% end %>
-  <% if presenter.joined_projects? %>
-      <li><a href="#projects" data-toggle="tab">Projects</a></li>
-  <% end %>
-  <% if presenter.contributed? %>
-    <li class="<%= activity_tab(param_tab)%>"><a href="#activity" data-toggle="tab">Activity</a></li>
-  <% end %>
+  <li><a href="#projects" data-toggle="tab">Projects</a></li>
+  <li class="<%= activity_tab(param_tab)%>"><a href="#activity" data-toggle="tab">Activity</a></li>
 </ul>
 <div id="tab-content" class="tab-content" style="background: #fff;">
 
@@ -35,49 +31,45 @@
         </section>
       </div>
   <% end %>
-  <% if presenter.joined_projects? %>
-      <div class="tab-pane" id="projects">
-        <section class="user-projects">
-          <h4>Project Involvement</h4>
-          <ul>
-            <% presenter.following_projects.each do |project| %>
-                <li><%= link_to project.title, project_path(project) %></li>
-            <% end %>
-          </ul>
-        </section>
-      </div>
-  <% end %>
-  <% if presenter.contributed? %>
+    <div class="tab-pane" id="projects">
+      <section class="user-projects">
+        <h4>Project Involvement</h4>
+        <ul>
+          <% presenter.following_projects.each do |project| %>
+              <li><%= link_to project.title, project_path(project) %></li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
     <div class="tab-pane <%= activity_tab(param_tab) %>"id="activity">
-        <section class="user-contributions">
-          <h4>Contributions (GitHub) - <%= presenter.user.commit_count_total %> total commits x 1 - <%=presenter.user.commit_count_total %><i class="fa fa-fire"></i></h4>
-          <ul>
-            <% presenter.contributions.each do |commit_count| %>
-                <li><b><%= link_to commit_count.project.title, commit_count.project.contribution_url %></b>
-                  - <%= commit_count.commit_count %> commits</li>
-            <% end %>
-          </ul>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Hangouts Hosted) - <%= presenter.user.number_hangouts_started_with_more_than_one_participant %> total hangouts x 1 - <%= presenter.user.number_hangouts_started_with_more_than_one_participant %><i class="fa fa-fire"></i></h4>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Hangouts Attended) - <%= presenter.user.hangouts_attended_with_more_than_one_participant %> total hangouts x 1 - <%= presenter.user.hangouts_attended_with_more_than_one_participant %><i class="fa fa-fire"></i></h4>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Authentications) - <%= presenter.user.authentications.count %> authentications x 100 - <%= presenter.user.authentications.count * 100 %><i class="fa fa-fire"></i></h4>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Profile Completeness) - <%= presenter.user.profile_completeness %> out of 10<i class="fa fa-fire"></i></h4>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Membership Length) - <%= presenter.user.membership_length %> out of 6<i class="fa fa-fire"></i></h4>
-        </section>
-        <section class="user-contributions">
-          <h4>Contributions (Sign In Activity) - <%= presenter.user.activity %> out of 6<i class="fa fa-fire"></i></h4>
-        </section>
-      </div>
-  <% end %>
+      <section class="user-contributions">
+        <h4>Contributions (GitHub) - <%= presenter.user.commit_count_total %> total commits x 1 - <%=presenter.user.commit_count_total %><i class="fa fa-fire"></i></h4>
+        <ul>
+          <% presenter.contributions.each do |commit_count| %>
+              <li><b><%= link_to commit_count.project.title, commit_count.project.contribution_url %></b>
+                - <%= commit_count.commit_count %> commits</li>
+          <% end %>
+        </ul>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Hangouts Hosted) - <%= presenter.user.number_hangouts_started_with_more_than_one_participant %> total hangouts x 1 - <%= presenter.user.number_hangouts_started_with_more_than_one_participant %><i class="fa fa-fire"></i></h4>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Hangouts Attended) - <%= presenter.user.hangouts_attended_with_more_than_one_participant %> total hangouts x 1 - <%= presenter.user.hangouts_attended_with_more_than_one_participant %><i class="fa fa-fire"></i></h4>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Authentications) - <%= presenter.user.authentications.count %> authentications x 100 - <%= presenter.user.authentications.count * 100 %><i class="fa fa-fire"></i></h4>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Profile Completeness) - <%= presenter.user.profile_completeness %> out of 10<i class="fa fa-fire"></i></h4>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Membership Length) - <%= presenter.user.membership_length %> out of 6<i class="fa fa-fire"></i></h4>
+      </section>
+      <section class="user-contributions">
+        <h4>Contributions (Sign In Activity) - <%= presenter.user.activity %> out of 6<i class="fa fa-fire"></i></h4>
+      </section>
+    </div>
 </div>
 
 

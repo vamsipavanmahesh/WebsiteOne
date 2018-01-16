@@ -46,6 +46,14 @@ WebsiteOne.define('Users', function () {
             $("#user_skill_list").val($("#skills").tags().getTags().join(","));
         });
 
+        $('#goto_karma_activity').click(function() {
+          var scrollHeight = $(document).scrollTop();
+          $('#tabs a[href="#activity"]').tab('show');
+          setTimeout(function () {
+            $(window).scrollTop(scrollHeight);
+          }, 5);
+        });
+
         $('#user-filter').on('keydown', function (e) {
             if (e.keyCode == 13) e.preventDefault();
         });
