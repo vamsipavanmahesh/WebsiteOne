@@ -9,6 +9,10 @@ class StaticPagesController < ApplicationController
     render plain: "#{params[:id]}.#{ENV['CERTBOT_SSL_CHALLENGE']}", layout: false
   end
 
+  def step_by_step
+
+  end
+
   def show
     return false if redirect_email_blunder
     @page = StaticPage.friendly.find(get_page_id(params[:id]))

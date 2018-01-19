@@ -21,6 +21,9 @@
 //= require bootstrap-tags
 //= require_self
 //= require_directory ./global-modules
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 //= stub mercury_init
 //= stub google-analytics

@@ -70,6 +70,10 @@ GEM
     autoprefixer-rails (7.0.1)
       execjs
     awesome_print (1.8.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
@@ -139,6 +143,7 @@ GEM
       activesupport (>= 3.0)
       deep_merge (~> 1.1.1)
       dry-validation (>= 0.10.4)
+    connection_pool (2.2.1)
     constant-redefinition (1.1.0)
     cookiejar (0.3.3)
     coveralls (0.8.21)
@@ -468,6 +473,12 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    react-rails (2.4.3)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     recaptcha (4.6.3)
       json
     redcarpet (3.4.0)
@@ -708,6 +719,7 @@ DEPENDENCIES
   rails (= 4.2.10)
   rails_12factor
   rails_autolink (~> 1.1.6)
+  react-rails
   recaptcha
   redcarpet
   rspec

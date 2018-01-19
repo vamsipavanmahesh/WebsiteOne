@@ -93,6 +93,7 @@ WebsiteOne::Application.routes.draw do
   resources :hookups
 
   get '/dashboard', to: 'dashboard#index'
+  get '/step_by_step', to: 'static_pages#step_by_step'
   get '*id', to: 'static_pages#show', as: 'static_page', :format => false
 
 end
