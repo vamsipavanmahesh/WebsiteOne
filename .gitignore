@@ -89,3 +89,6 @@ vendor/assets/javascripts/nprogress.js
 
 latest.dump
 certbot.log
+/public/packs
+/public/packs-test
+/node_modules
